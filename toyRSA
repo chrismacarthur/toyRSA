@@ -53,7 +53,7 @@ public class toyRSA {
     Random random = new Random();
     System.out.print("\nWelcome to toyRSA, an RSA Encryption Scheme simulator.\n--------------------\nSUPPLIED VALUES:\nThe first prime is p = " + p +"\nThe second prime is q = " + q + 
     "\nGENERATED VALUES:\nThe composite modulus n = " + n + "\nThe encryption exponent e = " + e + "\nThe decryption exponent d = " + d + 
-    "\n--------------------\nCommands:\n\t1: to generate random plaintext and encrypt\n\t2: to decrypt ciphertext\n\t3: terminate program\n");
+    "\n--------------------\nCommands:\n\t1: to generate random plaintext and encrypt\n\t2: to decrypt ciphertext\n\t3: to terminate the program\n");
 
     while(true) {
       choice = scan.nextInt();
@@ -99,7 +99,7 @@ public class toyRSA {
     System.out.println("performing modular exponentation on " + m + "^" + e + " % " + n + "...");
     c = modExponentation(m, e.intValue(), n);
     System.out.println("Done! The resulting ciphertext is c = " + c);
-    System.out.println("-------------------------\nCommands:\n\t1 to Encrypt\n\t2 to Decrypt\n\t3 to Exit\n--------------------\n");
+    System.out.println("-------------------------\nCommands:\n\t1: to generate random plaintext and encrypt\n\t2: to decrypt ciphertext\n\t3: to terminate the program\n--------------------\n");
   }
 
 
@@ -117,7 +117,7 @@ public class toyRSA {
     decM = modExponentation(c, d.intValue(), n);
     System.out.println("Done! The decrypted plaintext is m = " + decM);
     sessionCount++;
-    System.out.println("-------------------------\nCommands:\n\t1 to Encrypt\n\t2 to Decrypt\n\t3 to Exit\n--------------------\n");
+    System.out.println("-------------------------\nCommands:\n\t1: to generate random plaintext and encrypt\n\t2: to decrypt ciphertext\n\t3: to terminate the program\n--------------------\n");
   }
 
 
@@ -150,7 +150,7 @@ public class toyRSA {
     }
   }
 
-  
+
   /**
    * Implements modular exponentation, which is used to encrypt and decrypt
    * depending on the provided arguments
