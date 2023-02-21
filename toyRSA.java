@@ -1,5 +1,9 @@
 import java.math.BigInteger;
+
+/** utilized for generating the random plaintext message. */
 import java.util.Random;
+
+/** utilized for analyzing input. */
 import java.util.Scanner;
 
 /**
@@ -52,10 +56,10 @@ public class toyRSA {
     Scanner scan = new Scanner(System.in);
     Random random = new Random();
     System.out.print("\nWelcome to toyRSA, an RSA Encryption Scheme simulator.\n--------------------\nSUPPLIED VALUES:\nThe first prime is p = " + p +"\nThe second prime is q = " + q + 
-    "\nGENERATED VALUES:\nThe composite modulus n = " + n + "\nThe encryption exponent e = " + e + "\nThe decryption exponent d = " + d + 
-    "\n--------------------\nCommands:\n\t1: to generate random plaintext and encrypt\n\t2: to decrypt ciphertext\n\t3: to terminate the program\n");
-
+    "\nGENERATED VALUES:\nThe composite modulus n = " + n + "\nThe encryption exponent e = " + e + "\nThe decryption exponent d = " + d);
+    System.out.print("\n--------------------\nCommands:\n\t1: to generate random plaintext and encrypt\n\t2: to decrypt ciphertext\n\t3: to terminate the program\n");
     while(true) {
+    System.out.print("\n> ");
       choice = scan.nextInt();
       switch(choice) {
         case 1:
@@ -66,7 +70,7 @@ public class toyRSA {
             break;
           }
           else {
-            System.out.println("--------------------\nLooks like you've already encrypted a message! Try decrypting before encrypting a new message.\n--------------------\n");
+            System.out.println("Looks like you've already encrypted a message! Try decrypting before encrypting a new message.");
             break;
           }
         case 2:
@@ -76,7 +80,7 @@ public class toyRSA {
             break;
           }
           else {
-            System.out.println("--------------------\nLooks like you don't have an active encrypted message! Try encrypting a new message first.\n--------------------\n");
+            System.out.println("Looks like you don't have an active encrypted message! Try encrypting a new message first.");
             break;
           }
         case 3:
@@ -95,11 +99,10 @@ public class toyRSA {
    * @param m the plaintext message.
    */
   public static void enc(BigInteger e, BigInteger m) {
-    System.out.println("\n-------------------------\nEncrypting Session Message " + sessionCount + ":\nPlaintext to be encrypted is m = " + m);
+    System.out.println("Encrypting Session Message " + sessionCount + ":\nPlaintext to be encrypted is m = " + m);
     System.out.println("performing modular exponentation on " + m + "^" + e + " % " + n + "...");
     c = modExponentation(m, e.intValue(), n);
     System.out.println("Done! The resulting ciphertext is c = " + c);
-    System.out.println("-------------------------\nCommands:\n\t1: to generate random plaintext and encrypt\n\t2: to decrypt ciphertext\n\t3: to terminate the program\n--------------------\n");
   }
 
 
@@ -111,13 +114,12 @@ public class toyRSA {
    * @param c the encrypted ciphertext.
    */
   public static void dec(BigInteger d, BigInteger c) {
-    System.out.println("\n-------------------------\nDecrypting Session Message " + sessionCount + ":\nCiphertext to be decrypted is c = " + c);
+    System.out.println("Decrypting Session Message " + sessionCount + ":\nCiphertext to be decrypted is c = " + c);
     BigInteger decM;
     System.out.println("performing modular exponentation on " + c + "^" + d + " % " + n + "...");
     decM = modExponentation(c, d.intValue(), n);
     System.out.println("Done! The decrypted plaintext is m = " + decM);
     sessionCount++;
-    System.out.println("-------------------------\nCommands:\n\t1: to generate random plaintext and encrypt\n\t2: to decrypt ciphertext\n\t3: to terminate the program\n--------------------\n");
   }
 
 
