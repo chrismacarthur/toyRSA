@@ -1,3 +1,4 @@
+/** utilized for storing large numbers to avoid standard Integer overflow. */
 import java.math.BigInteger;
 
 /** utilized for generating the random plaintext message. */

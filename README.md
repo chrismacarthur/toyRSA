@@ -7,7 +7,13 @@ toyRSA relies on a few standard, built-in Java libraries, and should be compatib
 
 
 ## Running The Simulator
-Since the simulator is housed in a single java class, and requires no additional frameworks, compiling and installing the program should be fairly straightforward.
+The simulator is housed in a single java class, and requires no additional frameworks. Installing, compiling, and executing the program can be done as follows:
+```
+git clone https://github.com/chrismacarthur/toyRSA
+cd toyRSA
+javac toyRSA.java
+java toyRSA
+```
 
 toyRSA offers 3 command options to the user upon running:
 ```
