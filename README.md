@@ -6,7 +6,7 @@ toyRSA is a command-line encryption simulator designed to implement the RSA encr
 toyRSA relies on a few standard, built-in Java libraries, and should be compatible with any version of **Java 1.5+**.
 
 
-## Running The Simulator
+## Running the Simulator
 The simulator is housed in a single java class, and requires no additional frameworks. Installing, compiling, and executing the program can be done as follows:
 ```
 git clone https://github.com/chrismacarthur/toyRSA
